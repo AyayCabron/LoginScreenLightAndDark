@@ -1,0 +1,186 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Definição das variáveis de cores */
+:root {
+  --color-light-50: #f8fafc;
+  --color-dark-50: #797984;
+  --color-dark-100: #312d37;
+  --color-dark-900: #000;
+  --color-purple-50: #002397;
+  --color-purple-100: #007da6;
+  --color-purple-200: #00e09a;
+  /* Criação de gradiente com as cores utilizadas nas variáveis */
+  --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
+}
+
+/* Estilos globais */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do container principal */
+#container {
+  height: 100vh;
+  width: 100%;
+  background: var(--color-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos do formulário de login */
+#login_form {
+  background: var(--color-light-50);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 8px;
+  gap: 30px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+  height: fit-content;
+  animation: dark-to-light 0.3s ease-in-out;
+}
+
+/* Estilos do cabeçalho do formulário */
+#form_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#form_header h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+#form_header h1::before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  background-color: var(--color-purple-50);
+  height: 3px;
+  bottom: 10px;
+  border-radius: 5px;
+}
+
+#mode_icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Estilos das redes sociais */
+#social_media {
+  display: flex;
+  justify-content: space-around;
+}
+
+#social_media img {
+  width: 35px;
+}
+
+#social_media img:hover {
+  transform: scale(1.2);
+}
+
+/* Estilos dos inputs */
+#inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  color: var(--color-dark-50);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px;
+  cursor: text;
+  border-bottom: 1px solid var(--color-purple-50);
+}
+
+.input-field i {
+  font-size: 18px;
+  color: var(--color-dark-900);
+}
+
+.input-field input {
+  border: none;
+  background-color: transparent;
+  width: 260px;
+  font-size: 18px;
+  padding: 0px 5px;
+}
+
+.input-field input:focus {
+  outline: none;
+}
+
+/* Estilos do link "Esqueceu sua senha?" */
+#forgot_password a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--color-dark-50);
+}
+
+#forgot_password a:hover {
+  color: var(--color-purple-50);
+}
+
+/* Estilos do botão de login */
+#login_button {
+  border: none;
+  background: var(--color-gradient);
+  color: var(--color-light-50);
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+#login_button:hover {
+  transform: scale(1.05);
+}
+
+/* MODO DARK TELA DE LOGIN (FAZ A TELA DE LOGIN ENTRAR NO MODO DARK (ESCURO)) */
+.dark#login_form {
+  color: var(--color-light-50);
+  background-color: var(--color-dark-100);
+  animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i {
+  color: var(--color-light-50);
+}
+
+/* Animação para transição de dark para light */
+@keyframes dark-to-light {
+  0% {
+    background-color: var(--color-dark-100);
+  }
+  100% {
+    background-color: var(--color-light-50);
+  }
+}
+
+/* Animação para transição de light para dark */
+@keyframes light-to-dark {
+  0% {
+    background-color: var(--color-light-50);
+  }
+  100% {
+    background-color: var(--color-dark-100);
+  }
+}
